@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'to_do_list/index'
 
-  resources :lists
+  resources :lists do
+    resources :items
+  end
 
   root 'to_do_list#index'
 

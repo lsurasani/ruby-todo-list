@@ -1,0 +1,13 @@
+<%= form_with(model: [ @list, ListItem.new ], url: list_items_path(@list.id), local: true) do |form| %>
+    <p>
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+    </p>
+    <p>
+        <%= form.label :status %><br>
+        <%= form.text_field :status %>
+    </p>
+    <p>
+        <%= form.submit %>
+    </p>
+<% end %>

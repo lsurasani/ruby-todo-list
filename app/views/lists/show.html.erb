@@ -1,12 +1,18 @@
 <p>
-  <strong>Title:</strong>
-  <%= @list.title %>
+    <strong>Title:</strong>
+    <%= @list.title %>
 </p>
  
 <p>
-  <strong>Description:</strong>
-  <%= @list.description %>
+    <strong>Description:</strong>
+    <%= @list.description %>
 </p>
 
-<td><%= link_to 'Edit', edit_list_path(@list) %></td>
+<h2>Items</h2>
+<%= render partial: "items/item", collection: @list.list_items, as: @item %>
+
+<h2>Add an item:</h2>
+<%= render 'items/form' %>
+
+<%= link_to 'Edit', edit_list_path(@list) %>
 <%= link_to 'Back', lists_path %>
